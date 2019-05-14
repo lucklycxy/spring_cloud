@@ -1,0 +1,14 @@
+server:
+  port: 8761  #\u8BBE\u7F6E\u7AEF\u53E3\u53F7
+  #\u914D\u7F6Eeureka
+eureka:
+  instance:
+    hostname: localhost #\u914D\u7F6E\u5B9E\u4F8B\u5730\u5740
+  client:
+    register-with-eureka: false
+    fetch-registry: false #\u963B\u6B62eureka\u81EA\u8EAB\u9879\u76EE\u6CE8\u518C\u5230\u6CE8\u518C\u4E2D\u5FC3
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka
+      server:
+        enable-self-preservation: false # \u5173\u95ED\u81EA\u6211\u4FDD\u62A4\u673A\u5236 \uFF0C \u9ED8\u8BA4\u4E3Atrue\u5F00\u542F
+
